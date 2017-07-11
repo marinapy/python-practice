@@ -1,4 +1,5 @@
 import code
+import operator
 
 products = [ {"id":1, "name": "Chocolate Sandwich Cookies", "department": "snacks", "aisle": "cookies cakes", "price": 3.50},
     {"id":2, "name": "All-Seasons Salt", "department": "pantry", "aisle": "spices seasonings", "price": 4.99},
@@ -24,7 +25,12 @@ products = [ {"id":1, "name": "Chocolate Sandwich Cookies", "department": "snack
 
 print(products)
 
+products = sorted(products, key=operator.itemgetter("name"))
+
 # code.interact(local=locals())
 print(len (products))
 print("-----------")
 print("THERE ARE " + str(len(products)) + " PRODUCTS:")
+
+for product in products:
+    print(" + " + product["name"])
