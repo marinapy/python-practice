@@ -23,3 +23,8 @@ products = [ {"id":1, "name": "Chocolate Sandwich Cookies", "department": "snack
 ]
 
 print(products)
+
+# code.interact(local=locals())
+print(len (products))
+print("-----------")
+print("THERE ARE " + str(len(products)) + " PRODUCTS:")
