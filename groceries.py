@@ -23,14 +23,33 @@ products = [ {"id":1, "name": "Chocolate Sandwich Cookies", "department": "snack
     {"id":20, "name": "Pomegranate Cranberry & Aloe Vera Enrich Drink", "department": "beverages", "aisle": "juice nectars", "price": 4.25}
 ]
 
-print(products)
+#print(products)
 
 products = sorted(products, key=operator.itemgetter("name"))
 
 # code.interact(local=locals())
-print(len (products))
+#print(len (products))
 print("-----------")
 print("THERE ARE " + str(len(products)) + " PRODUCTS:")
 
 for product in products:
-    print(" + " + product["name"])
+    price_usd = ' (${0:.2f})'.format(product["price"])
+    print(" + " + product["name"] + price_usd)
+
+departments = []
+
+for product in products:
+        departments.append(product["department"])
+
+        departments = set(departments)
+        departments = list(departments)
+
+#print(departments)
+
+print("-----------")
+print("THERE ARE " + str(len(departments)) + " DEPARTMENTS:")
+
+products = sorted(products, key=operator.itemgetter("department"))
+for product in products:
+
+    print(" + " + product["department"])
