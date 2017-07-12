@@ -41,15 +41,15 @@ departments = []
 for product in products:
         departments.append(product["department"])
 
-        departments = set(departments)
+
+        departments = set(departments) #removing duplicate values
         departments = list(departments)
+        departments = sorted(departments)
 
 #print(departments)
 
 print("-----------")
 print("THERE ARE " + str(len(departments)) + " DEPARTMENTS:")
 
-products = sorted(products, key=operator.itemgetter("department"))
-for product in products:
-
-    print(" + " + product["department"])
+for department_name in departments:
+    print(" + " + department_name.title())
