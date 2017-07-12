@@ -42,14 +42,15 @@ for product in products:
         departments.append(product["department"])
 
 
-        departments = set(departments) #removing duplicate values
-        departments = list(departments)
-        departments = sorted(departments)
+        unique_departments = set(departments) #removing duplicate values
+        unique_departments = list(unique_departments)
+        unique_departments = sorted(unique_departments)
 
 #print(departments)
 
 print("-----------")
-print("THERE ARE " + str(len(departments)) + " DEPARTMENTS:")
+print("THERE ARE " + str(len(unique_departments)) + " DEPARTMENTS:")
 
-for department_name in departments:
-    print(" + " + department_name.title())
+for department_name in unique_departments:
+    count_of_products = departments.count(department_name)
+    print(" + " + department_name.title() + " (" + str(count_of_products) + " products)")
